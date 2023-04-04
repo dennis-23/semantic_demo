@@ -1,0 +1,85 @@
+{
+    "branch": "develop",
+    "plugins": [
+        [
+            "@semantic-release/commit-analyzer",
+            {
+                "preset": "eslint",
+                "releaseRules": [
+                    {
+                        "tag": "major",
+                        "release": "major"
+                    },
+                    {
+                        "tag": "fix",
+                        "release": "patch"
+                    },
+                    {
+                        "tag": "minor",
+                        "release": "minor"
+                    },
+                    {
+                        "tag": "update",
+                        "release": "minor"
+                    },
+                    {
+                        "tag": "upgrade",
+                        "release": "minor"
+                    },
+                    {
+                        "tag": "feat",
+                        "release": "minor"
+                    }
+                ]
+            }
+        ],
+        [
+            "@semantic-release/release-notes-generator",
+            {
+                "preset": "eslint",
+                "releaseRules": [
+                    {
+                        "tag": "major",
+                        "release": "major"
+                    },
+                    {
+                        "tag": "fix",
+                        "release": "patch"
+                    },
+                    {
+                        "tag": "minor",
+                        "release": "minor"
+                    },
+                    {
+                        "tag": "update",
+                        "release": "minor"
+                    },
+                    {
+                        "tag": "upgrade",
+                        "release": "minor"
+                    },
+                    {
+                        "tag": "feat",
+                        "release": "minor"
+                    }
+                ]
+            }
+        ],
+        [
+            "@semantic-release/changelog",
+            {
+                "changelogFile": "CHANGELOG.md"
+            }
+        ],
+        "@semantic-release/github",
+        [
+            "@semantic-release/git",
+            {
+                "assets": [
+                    "CHANGELOG.md"
+                ],
+                "message": "Published ${nextRelease.type} release version${nextRelease.notes}"
+            }
+        ]
+    ]
+}
