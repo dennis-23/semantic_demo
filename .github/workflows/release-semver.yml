@@ -1,0 +1,26 @@
+name: semantic-release
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v2
+        id: semantic
+        with:
+          semantic_version: 19.0.5
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+            conventional-changelog-eslint
+          branches: |
+            ['dev']
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
