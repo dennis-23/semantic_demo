@@ -22,5 +22,5 @@ jobs:
             conventional-changelog-eslint
           branches: |
             ['dev']
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
